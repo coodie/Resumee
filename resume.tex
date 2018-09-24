@@ -1,0 +1,152 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\voffset}{0.1in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\paperheight}{11in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\topmargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\topskip}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+%-----------------------------------------------------------
+%\usepackage{fullpage}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{shading}
+%\textheight=9.0in
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \parashade[.9]{sharpcorners}{\textbf{#1 \vphantom{p\^{E}}}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Przemysław Leśniak} \\
+przemek.lesniak1@gmail.com \\
+\end{tabular*}
+\\
+
+\vspace{0.1in}
+
+\resheading{Education}
+\begin{itemize}
+\item
+	\ressubheading{University of Wrocław}{Wrocław, Poland}{B.Sc. currently pursing M.Sc., Computer Science}{Mar. 2013 - Jun. 2019}
+	\begin{itemize}
+		\resitem{Bachelor thesis: \textit{virtual memory subsystem for mimiker operating system} }
+	\end{itemize}
+
+\item
+	\ressubheading{Saarland University}{Saarbrucken, Germany}{M.Sc. Computer Science}{Sep. 2017 - Mar. 2018}
+	\begin{itemize}
+		\resitem{One semester Erasmus student exchange}
+	\end{itemize}
+\end{itemize}
+
+\resheading{Work Experience}
+\begin{itemize}
+\item
+	\ressubheading{Bloomberg}{London, United Kingdom}{Software Engineering Placement}{Mar. 2018 - Sep. 2018}
+	\begin{itemize}
+		\resitem{Joined Market Data Pipeline team working on system publishing market data to interested subscribers.}
+		\resitem{Responsibilities: mdpconf project that centralized configuration of complicated pipeline that in future would make it easier to improve scalability of the system, tools used by the team for debugging and inspecting state, configuring the pipeline. }
+		\resitem{Technologies used: C++, python2, javascript, comdb2, docker. }
+		\resitem{Won \textit{Best Dancing Intern} award. }
+	\end{itemize}
+	
+\item
+	\ressubheading{Saarland University}{Saarbrucken, Germany}{Student Programmer}{Nov. 2017 - Mar. 2018}
+	\begin{itemize}
+		\resitem{Extended x86 backend in LLVM to support Intel MPX instructions. Used in research project to improve memory safety of C programs by inserting runtime checks in compiled code. }
+		\resitem{ Technologies used: C++, LLVM}
+	\end{itemize}
+\item
+	\ressubheading{Google Summer of Code}{Remote Work}{Student Programmer}{June. 2017 - Sep. 2017}
+	\begin{itemize}
+		\resitem{ Worked on improving LLVM backend for Chapel Compiler. }
+		\resitem{ Improved vectorization by adding metadata and fixing bugs in LLVM IR generation which resulted in performance of executed code by 400\% in some common cases. }
+		\resitem{ Technologies used: C++, LLVM, Python}
+	\end{itemize}
+\item
+	\ressubheading{Nokia}{Wrocław, Poland}{Compiler Developer}{Jul. 2016 - Mar. 2017}
+	\begin{itemize}
+		\resitem{ Joined team responsible for TTCN-3 language compiler and runtime used at Nokia for writing and running complicated test scenarios.}
+		\resitem{ Greatly reduced number of memory allocations in runtime by using object-pool like design pattern resulting in 20\% performance gain on average.}
+		\resitem{ Reduced number of copying operations by introducing move operation and generating it in compiler which resulted in 5-10\% performance gains on average.}
+		\resitem{ Technologies used: C++, Python, TTCN-3, valgrind }
+	\end{itemize}
+\item
+	\ressubheading{Nokia}{Wrocław, Poland}{Summer Intern}{ July. 2015 - Sep. 2015}
+	\begin{itemize}
+		\resitem{Participated in library design inspired by Parsec library from Haskell language that was used to implement partial parser for TTCN-3 language.}
+    	\resitem{Designed and implemented algorithm based on pushdown automata to locate changes in code in real time that would need to be re-parsed.}
+    	\resitem{Integrated the algorithm and the parser into QtCreator to provide IDE functionality like auto-completion and jumping to function definitions.}
+    	\resitem{Technologies used: C++, Haskell, SQLite}
+	\end{itemize}
+\end{itemize}
+
+\resheading{Projects}
+\begin{itemize}
+\item
+	\ressubheading{mimiker}{}{University of Wrocław operating system}{}
+	\begin{itemize}
+		\resitem{Significant contributions in kernel: physical page allocator, page table management, tlb refill handler, mutexes, basic in-memory file system, ramdisk loading, selected system calls. Helped new students get into the project. }
+	\end{itemize}
+\item
+	\ressubheading{quant}{}{Lossy image compression algorithm}{}
+	\begin{itemize}
+		\resitem{Reduces image size by approximately 80\% using vector quantization method. Preserves good image quality. Optimized typically slow algorithm by fine tuning data structures like using small vector and parallelizing parts of code.
+		}
+	\end{itemize}
+\item
+	\ressubheading{C compiler}{}{Compiler construction course project}{}
+	\begin{itemize}
+		\resitem{ Written in C++. Implemented hand written parser, semantic analysis (type checking, scope resolution), code generation to LLVM IR, Static Constant Propagation optimization on LLVM IR. Supports basic programming constructs like if statements, while loops, structs, pointers, string literals. }
+	\end{itemize}
+\item
+	\ressubheading{Other projects}{}{Written at home and university}{}
+	\begin{itemize}
+		\resitem{Tiny compiler for subset of C written in Haskell.}
+		\resitem{Program for graph drawing and running complex graph algorithms written in Java. }
+		\resitem{Rubik's cube solver written in python.}
+		\resitem{Raytracer written on Computer Graphics course in C++. }
+	\end{itemize}
+\end{itemize}
+
+\resheading{Skills and interests}
+
+\begin{description}
+\item[Programming languages:]
+C++, C, Python, Java, Javascript, Haskell
+\item[Other:]
+git, linux, vim, valgrind, object oriented programming
+\item[Interests:]{popping dance, speedcubing}
+\end{description}
+
+\end{document}
