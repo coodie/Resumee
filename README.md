@@ -13,8 +13,8 @@ cp -r shading ~/texmf/tex/latex/local
 ```
 
 In textmaker compile with PostScript (Dvi->Ps). And resulting file should be resume.ps,
-it can be easily converted to pdf using ghostscript:
+it can be easily converted to pdf using ubuntu ghostscript package:
 
 ```
-ghostscript resume.ps resume.pdf
+ps2pdf resume.ps resume.pdf
 ```
